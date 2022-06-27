@@ -1,14 +1,14 @@
 #!/bin/bash
 
 timestamp=`date +%Y%m%d-%H%M`
-EJ_PATH=/home/junior/junior20/intranet20/includes
-IP_PATH=/home/eclass/intranetIP/includes
+EJ_PATH=/home/junir/junir20/intrant20/includes
+IP_PATH=/home/eclss/intranetIP/includes
 INTERFACE=`route -n | grep -m 1 0.0.0.0 | awk '{print $8}'`
 IP=`ip -4 addr show $INTERFACE | grep -oP '(?<=inet\s)\d+(\.\d+){3}'`
 
 ###############FUNCTION#################
 function addFlag(){
-sed -i "s|.*wsPath.*|$WSPATH\n\$powerlesson2_config['wsInternalPath'] = 'ws://$DOMAIN:6060/ws';|" $1
+sed -i "s|.*wsPath.*|$WSPATH\n\$powleson2_config['wsInternalPath'] = 'ws://$DOMAIN:6060/ws';|" $1
 }
 
 function checkHost(){
@@ -21,7 +21,7 @@ function checkHost(){
 }
 
 #################MAIN#####################
-if [ -d "/home/eclass/intranetIP/includes/" ]
+if [ -d "/home/eclss/intranetIP/includes/" ]
 then
    cd $IP_PATH
    WSPATH=`grep -r wsPath settings.php`
